@@ -1,0 +1,204 @@
+/* estilos.css */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #2dd4bf;
+  --muted: #94a3b8;
+  --ticket-bg: #0b1222;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, #071025 0%, #0f1724 100%);
+  color: #055bac;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 32px;
+  gap: 20px;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 6px;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+.formulario {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.formulario label {
+  font-size: 14px;
+  color: var(--muted);
+}
+.formulario select,
+.formulario input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+}
+.row {
+  display: flex;
+  gap: 12px;
+}
+.row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.45);
+}
+.btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.03);
+}
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), #60a5fa);
+  color: #042026;
+  font-weight: 700;
+}
+.btn.small {
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.peliculas-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 6px;
+}
+.pelicula-card {
+  width: 240px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+}
+.pelicula-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.card-actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mensaje {
+  width: 100%;
+  max-width: 900px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  color: var(--accent);
+  font-weight: 600;
+  min-height: 36px;
+}
+.tickets-area {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 8px;
+}
+
+.ticket {
+  width: 260px;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ticket .titulo {
+  font-weight: 700;
+  font-size: 16px;
+}
+.ticket .detalle {
+  font-size: 13px;
+  color: var(--muted);
+}
+.ticket .precio {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.creditos {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .pelicula-card img {
+    height: 220px;
+  }
+  .row {
+    flex-direction: column;
+  }
+}

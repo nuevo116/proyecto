@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CineJS - Práctica</title>
+  <link rel="stylesheet" href="cine.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>CineJS - Gestor de Venta de Entradas Online</h1>
+
+    <form id="formCompra" class="formulario" onsubmit="event.preventDefault(); procesarCompra();">
+      <label for="pelicula">Película</label>
+      <select id="pelicula" required>
+        <option value="">-- Elige una película --</option>
+        <option value="Núremberg">Núremberg</option>
+        <option value="Zootrópolis 2">Zootrópolis 2</option>
+        <option value="Drácula">Drácula</option>
+      </select>
+
+      <div class="row">
+        <div>
+          <label for="edad">Edad del cliente</label>
+          <input id="edad" type="number" min="0" placeholder="Edad" required />
+        </div>
+        <div>
+          <label for="cantidad">Cantidad de entradas</label>
+          <input id="cantidad" type="number" min="1" value="1" required />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btnComprar" type="submit" class="btn primary">Comprar</button>
+        <button id="btnReset" type="button" class="btn" onclick="resetForm()">Reset</button>
+      </div>
+    </form>
+
+    <section class="peliculas-grid">
+      <article class="pelicula-card">
+        <img src="Núremberg.webp" alt="Núremberg poster" />
+        <h3>Núremberg</h3>
+        <div class="card-actions">
+          <button class="btn small" onclick="openTrailer('Núremberg')">Ver tráiler</button>
+          <button class="btn small" onclick="selectMovieFromCard('Núremberg')">Seleccionar</button>
+        </div>
+      </article>
+
+      <article class="pelicula-card">
+        <img src="zootropolis 2.jpeg" alt="Zootrópolis 2 poster" />
+        <h3>Zootrópolis 2</h3>
+        <div class="card-actions">
+          <button class="btn small" onclick="openTrailer('Zootrópolis 2')">Ver tráiler</button>
+          <button class="btn small" onclick="selectMovieFromCard('Zootrópolis 2')">Seleccionar</button>
+        </div>
+      </article>
+
+      <article class="pelicula-card">
+        <img src="Dracula.jpg" alt="Drácula poster" />
+        <h3>Drácula</h3>
+        <div class="card-actions">
+          <button class="btn small" onclick="openTrailer('Drácula')">Ver tráiler</button>
+          <button class="btn small" onclick="selectMovieFromCard('Drácula')">Seleccionar</button>
+        </div>
+      </article>
+    </section>
+
+    <div id="mensajeTotal" class="mensaje"></div>
+
+    <section id="ticketsContainer" class="tickets-area" aria-live="polite"></section>
+
+    <footer class="creditos">CineJS - Gestor de Venta de Entradas Online 2025</footer>
+  </main>
+
+  <script src="cine.js"></script>
+</body>
+</html>
