@@ -118,3 +118,24 @@ document.getElementById('edad').addEventListener('input', function(e){
 document.getElementById('cantidad').addEventListener('input', function(e){
     if (this.value) this.value = Math.max(1, Math.floor(Number(this.value)));
 });
+
+// --- POPUP DE OFERTA ---
+
+function mostrarPopupOferta() {
+    const popup = document.getElementById("popupOferta");
+    popup.classList.add("popup-visible");
+}
+
+function cerrarPopupOferta() {
+    const popup = document.getElementById("popupOferta");
+    popup.classList.remove("popup-visible");
+}
+
+// Evento para cerrar el popup
+document.getElementById("cerrarPopup").addEventListener("click", cerrarPopupOferta);
+
+// Mostrar popup a los 2 segundos de cargar la página
+window.onload = () => {
+    setTimeout(mostrarPopupOferta, 2000);
+};
+
